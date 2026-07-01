@@ -1,48 +1,133 @@
-const certificates = {
-  "NF2025001": {
-    name: "Fatemeh Shahbazi Moghadam",
-    course: "Master Nail Educator",
-    date: "2025/07/01"
-  },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Verification</title>
 
-  "NF2025002": {
-    name: "Sara Ahmadi",
-    course: "Gel Nail Extension",
-    date: "2025/07/02"
-  },
+<style>
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffe6f1,#ffd9ec);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
 
-  "NF2025003": {
-    name: "Maryam Mohammadi",
-    course: "Russian Manicure",
-    date: "2025/07/03"
-  }
+.box{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+width:90%;
+max-width:450px;
+text-align:center;
+}
+
+h1{
+color:#c21875;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:15px;
+font-size:18px;
+border-radius:12px;
+border:1px solid #ccc;
+margin-bottom:20px;
+box-sizing:border-box;
+}
+
+button{
+background:#ff4fa3;
+color:white;
+border:none;
+padding:15px 35px;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e63d91;
+}
+
+#result{
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Certificate Verification</h1>
+
+<input id="code" placeholder="Enter Certificate Code">
+
+<button onclick="check()">Verify</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const certificates={
+
+"NF2025001":{
+name:"Fatemeh Shahbazi Moghadam",
+course:"Master Nail Educator",
+date:"2025/07/01"
+},
+
+"NF2025002":{
+name:"Sara Ahmadi",
+course:"Gel Nail Extension",
+date:"2025/07/02"
+},
+
+"NF2025003":{
+name:"Maryam Mohammadi",
+course:"Russian Manicure",
+date:"2025/07/03"
+}
+
 };
 
 function check(){
 
 let code=document.getElementById("code").value.trim();
 
-let student=certificates[code];
+let result=document.getElementById("result");
 
-if(student){
+if(certificates[code]){
 
-document.getElementById("result").innerHTML=
-`
-✅ <h3>Valid Certificate</h3>
+let c=certificates[code];
 
-<b>Name:</b> ${student.name}<br><br>
-
-<b>Course:</b> ${student.course}<br><br>
-
-<b>Date:</b> ${student.date}<br><br>
-
-<b>Status:</b> VALID ✅
-`;
+result.innerHTML=
+"✅ <span style='color:green'>Valid Certificate</span><br><br>"
++"<b>"+c.name+"</b><br>"
++c.course+"<br>"
++"Issue Date: "+c.date;
 
 }else{
 
-document.getElementById("result").innerHTML="❌ Certificate Not Found";
+result.innerHTML=
+"❌ <span style='color:red'>Certificate Not Found</span>";
 
 }
 
 }
+
+</script>
+
+</body>
+</html>
