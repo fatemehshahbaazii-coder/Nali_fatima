@@ -111,7 +111,25 @@ function check(){
 
 let code=document.getElementById("code").value.trim();
 
-let result=document.getElementById("result");
+let result=document.getElementById(result.innerHTML = `
+<div style="background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:left">
+
+<h2 style="color:#d81b60;text-align:center;">🏆 Nail Fatima Academy</h2>
+
+<h3 style="color:green;text-align:center;">✅ Certificate Verified</h3>
+
+<p><b>👤 Student:</b> ${c.name}</p>
+
+<p><b>💅 Course:</b> ${c.course}</p>
+
+<p><b>📅 Date:</b> ${c.date}</p>
+
+<p><b>👩‍🏫 Instructor:</b> Fatemeh Shahbazi Moghadam</p>
+
+<p><b>🟢 Status:</b> VALID</p>
+
+</div>
+`;);
 
 if(certificates[code]){
 
