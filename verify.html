@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Verification</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#ffe4ef;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+width:320px;
+text-align:center;
+}
+
+h2{
+color:#d10073;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:15px 0;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+background:#ff3f9f;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Certificate Verification</h2>
+
+<input id="code" placeholder="Enter Certificate Code">
+
+<button onclick="check()">Verify</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function check(){
+
+let code=document.getElementById("code").value;
+
+if(code=="NF2025001"){
+
+document.getElementById("result").innerHTML="✅ Valid Certificate<br><br>Fatemeh Shahbazi Moghadam";
+
+}else{
+
+document.getElementById("result").innerHTML="❌ Certificate Not Found";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
